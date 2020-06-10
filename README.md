@@ -4,7 +4,7 @@ PDFXKit is a drop-in replacement for [Apple
 PDFKit](https://developer.apple.com/documentation/pdfkit) using the industry
 leading [PSPDFKit](http://pspdfkit.com) framework under the hood. The latest
 version requires [PSPDFKit 9 for
-iOS](https://pspdfkit.com/blog/2019/pspdfkit-ios-9) and Xcode 11.
+iOS](https://pspdfkit.com/blog/2019/pspdfkit-ios-9) and Xcode 11.5.
 
 [![](https://pspdfkit.com/images/blog/2017/pdfxkit/pdfxkit-7b7a75f5.png)](https://pspdfkit.com/blog/2017/introducing-pdfxkit/)
 
@@ -55,16 +55,10 @@ PDFXKit as a dependency to your `Podfile`.
 target :YourAppName do
   use_frameworks!
 
-  # Replace `YOUR_COCOAPODS_KEY` with your own.
-  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/cocoapods/YOUR_COCOAPODS_KEY/latest.podspec'
+  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/pspdfkit-ios/latest.podspec'
   pod 'PDFXKit', :git => "git@github.com:PSPDFKit/PDFXKit.git", :branch => "master"
 end
 ```
-
-**Note:** make sure to replace `YourAppName` with your app name and
-`YOUR_COCOAPODS_KEY` with your own key provided by PSPDFKit GmbH. You can find
-your key either in [customer portal](https://customers.pspdfkit.com/) or by
-requesting an [evaluation license](https://pspdfkit.com/try/).
 
 Now run `pod install`. Afterwards you should be able to build & run your project
 without errors. Next you'll have to adapt your project to use PDFXKit as
@@ -79,20 +73,15 @@ a dependency to your `Cartfile`.
 
 --------------------------------------------------------------------------------
 
-*PDFXKit requires Xcode 11 and later.*
+*PDFXKit requires Xcode 11.5 and later.*
 
 --------------------------------------------------------------------------------
 
 ``` Ruby
 # Replace YOUR_COCOAPODS_KEY with your own
-binary "https://customers.pspdfkit.com/carthage/YOUR_COCOAPODS_KEY/PSPDFKit.json"
+binary "https://customers.pspdfkit.com/pspdfkit-ios.json"
 git "git@github.com:PSPDFKit/PDFXKit.git" "master"
 ```
-
-**Note:** make sure to replace `YOUR_COCOAPODS_KEY` with your own key provided
-by PSPDFKit GmbH. You can find your key either in [customer
-portal](https://customers.pspdfkit.com/) or by requesting an
-[evaluation license](https://pspdfkit.com/try/).
 
 Now follow the regular [Carthage setup routine](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 to add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PDFXKit.framework` as a dependency to your
