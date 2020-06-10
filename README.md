@@ -64,35 +64,10 @@ Now run `pod install`. Afterwards you should be able to build & run your project
 without errors. Next you'll have to adapt your project to use PDFXKit as
 described in Section [Switch to PDFXKit](#switch-to-pdfxkit).
 
-### Using Carthage
-
-We assume you are familiar with
-[Carthage](https://github.com/Carthage/Carthage), otherwise please consult the
-Carthage documentation first. You'll have to add PSPDFKit as well as PDFXKit as
-a dependency to your `Cartfile`.
-
---------------------------------------------------------------------------------
-
-*PDFXKit requires Xcode 11.5 and later.*
-
---------------------------------------------------------------------------------
-
-``` Ruby
-# Replace YOUR_COCOAPODS_KEY with your own
-binary "https://customers.pspdfkit.com/pspdfkit-ios.json"
-git "git@github.com:PSPDFKit/PDFXKit.git" "master"
-```
-
-Now follow the regular [Carthage setup routine](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
-to add `PSPDFKit.framework`, `PSPDFKitUI.framework`, and `PDFXKit.framework` as a dependency to your
-project. Afterwards you should be able to build your project without errors.
-Next you'll have to adapt your project to use PDFXKit as described in Section
-[Switch to PDFXKit](#switch-to-pdfxkit).
-
 ### Manual Setup
 
 **Note:** manual setup is only for experts, we assume you know what you are
-doing. If you are unsure, please use CocoaPods or Carthage instead.
+doing. If you are unsure, please use CocoaPods instead.
 
 First, build the PDFXKit framework:
 
@@ -190,17 +165,6 @@ Please [sign our CLA agreement](https://pspdfkit.com/guides/web/current/miscella
   accessible by `PDFXDocument`.
 
 ## Known Issues
-
-**Linker warning when building without Carthage**. In order to support Carthage
-out-of-the-box with per-customer PSPDFKit URL, we've added the _parent_
-Carthage build folder to the "Framework Search Paths". When building without
-Carthage, this produces the following warning:
-
-```
-ld: warning: directory not found for option '-F/Users/konstantinbe/Projects/PSPDFKit/PDFXKit/../../../Carthage/Build/iOS'
-```
-
---------------------------------------------------------------------------------
 
 **Conflicting gesture recognizers**. Your gesture recognizers might be in
 conflict with some of PSPDFKit's recognizers. If so, implement the
