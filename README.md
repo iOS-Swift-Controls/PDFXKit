@@ -55,7 +55,7 @@ PDFXKit as a dependency to your `Podfile`.
 target :YourAppName do
   use_frameworks!
 
-  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/pspdfkit-ios/latest.podspec'
+  pod 'PSPDFKit', podspec: 'https://customers.pspdfkit.com/pspdfkit-ios/latest-framework.podspec'
   pod 'PDFXKit', :git => "git@github.com:PSPDFKit/PDFXKit.git", :branch => "master"
 end
 ```
